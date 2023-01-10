@@ -34,7 +34,7 @@ In this section, there are brief information about the projects handled, the pro
 **Description:** The dataset includes records for the years 2020-2021. Each table has 13 features. These are ride id, stations related to start and end, coordinates and time information, membership status and bike model. The dataset contains approximately 9 million raw records. <br>
 **Skills:** data cleaning, data analysis, descriptive statistics, hypothesis testing, data visualization.
 
-### Mobile Game Retention Analysis
+### [Mobile Game Retention Analysis] (Mobile Game Retention)
 **Codes/Results:** [SQL](Mobile Game Retention), [Python](Mobile Game Retention), [Tableau Public](https://public.tableau.com/app/profile/balozgur)<br>
 **Source:** ........................<br>
 **Description:** ........................................<br>
