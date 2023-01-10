@@ -42,7 +42,7 @@ In this section, there are brief information about the projects handled, the pro
 
 ### Animal Shelter
 **Codes/Results:** [SQL](animal_shelter\SQL), [Python](animal_shelter\Python), [Tableau Public](https://public.tableau.com/app/profile/balozgur)<br>
-**Description:** My solution to an open Data Analyst competition held by [Карьерный Цех](https://careerfactory.ru/). The solution took the 7th place in the competition (≈100 solutions were submitted by participants).     
+**Description:** ..........................    
 **Source:** ........................<br>
 **Description:** ........................................<br>
 **Skills:** ...........................................
