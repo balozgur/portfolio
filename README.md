@@ -35,14 +35,13 @@ In this section, there are brief information about the projects handled, the pro
 **Skills:** data cleaning, data analysis, descriptive statistics, hypothesis testing, data visualization.
 
 ### Mobile Game Retention Analysis
-**Codes/Results:** [SQL](retention_game\SQL), [Python](retention_game\Python), [Tableau Public](https://public.tableau.com/app/profile/balozgur)<br>
+**Codes/Results:** [SQL](Mobile Game Retention), [Python](Mobile Game Retention), [Tableau Public](https://public.tableau.com/app/profile/balozgur)<br>
 **Source:** ........................<br>
 **Description:** ........................................<br>
 **Skills:** ...........................................
 
 ### Animal Shelter
-**Codes/Results:** [SQL](animal_shelter\SQL), [Python](animal_shelter\Python), [Tableau Public](https://public.tableau.com/app/profile/balozgur)<br>
-**Description:** ..........................    
+**Codes/Results:** [SQL](animal_shelter\SQL), [Python](animal_shelter\Python), [Tableau Public](https://public.tableau.com/app/profile/balozgur)<br>  
 **Source:** ........................<br>
 **Description:** ........................................<br>
 **Skills:** ...........................................
