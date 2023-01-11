@@ -1,11 +1,80 @@
+-- CREATE DATABASE
+CREATE DATABASE IF NOT EXISTS retention_game;
+
+-- ACTIVATE DATABASE
+USE retention_game;
+
+-- CREATING NECESSARY TABLES
+CREATE TABLE IF NOT EXISTS  RETENTION_GAME.event (
+	user_id varchar(50) NULL,
+	device_id varchar(50) NULL,
+	event_name varchar(50) NULL,
+	event_time varchar(50) NULL
+);
+
+CREATE TABLE IF NOT EXISTS RETENTION_GAME.product (
+	product_id int2 NULL,
+	price int8 NULL,
+	skin_color varchar(50) NULL
+);
+
+CREATE TABLE IF NOT EXISTS RETENTION_GAME.age_segment (
+	id int2 NULL,
+	age_min int2 NULL,
+	age_max int2 NULL
+);
+
+CREATE TABLE IF NOT EXISTS RETENTION_GAME.account (
+	user_id varchar(50) NULL,
+	device_id varchar(50) NULL,
+	age int4 NULL,
+	gender varchar(50) NULL
+);
+-- LOAD DATA 
+-- 'load data infile' is preferred to transfer data to tables quickly.
+-- The file path may be different for you. You can continue by editing the file path 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\'.
+-- load data 'account'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\RETENTION_GAME\\account.csv' 
+INTO TABLE RETENTION_GAME.account 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+-- load data 'event'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\RETENTION_GAME\\event.csv' 
+INTO TABLE RETENTION_GAME.event 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+-- load data 'age_segment'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\RETENTION_GAME\\age_segment.csv' 
+INTO TABLE RETENTION_GAME.age_segment 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+-- load data 'product'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\RETENTION_GAME\\product.csv' 
+INTO TABLE RETENTION_GAME.product 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
 -- Select database
 USE retention_game;
 
+-- Select all columns in the 'activity' table
 SELECT
 	*
 FROM
 	RETENTION_GAME.activity;
 
+-- to list purchased products in table 'activity'
 SELECT
 	act.activity
 FROM
@@ -13,6 +82,7 @@ FROM
 WHERE
 	act.activity LIKE 'Product_%';
 
+-- which user bought which product on which date?
 SELECT
 	act.user_id,
 	act.activity_time,
@@ -21,7 +91,8 @@ FROM
 	RETENTION_GAME.activity AS act
 WHERE
 	act.activity LIKE 'Product_%';
-
+-- Which user bought which product on which date?
+-- The date was arranged as year-month-day, and the purchased products were sorted by user name.
 SELECT
 	SUBSTR(act.activity_time, 1, 10) AS date,
 	act.activity,
@@ -32,7 +103,7 @@ WHERE
 	act.activity LIKE 'Product_%'
 ORDER BY
 	act.user_id;
--- total number daily purchases 
+-- purchases by day, listed by date 
 SELECT
 	SUBSTR(act.activity_time, 1, 10) AS date,
 	COUNT(*) AS cnt
@@ -289,12 +360,3 @@ GROUP BY
 	date) AS cln
 GROUP BY cln.user_id
 ORDER BY cln.user_id;
-
-
-
-
-
-
-
-
-
